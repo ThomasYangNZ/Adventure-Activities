@@ -1,6 +1,9 @@
 # Adventure Activities
 Websites along with their database connections can be a complex endeavour, especially when tied in with dynamic user inputs. This project demonstrates understanding of full-stack capabilities by coordinating database schema, server-side logic, and responsive front-end behaviour. User authentication has been implemented as well as permission control via separate database connections and prepared SQL statements mitigate the risk of malicious attacks such as SQL injection. 
 
+![Gif of homepage](images/homePageAdventureActivities.gif)
+*Homepage of Adventure Activities*
+
 ## NOTE
 The database has been included with this project to allow for users to properly explore its functionality note that ALL data within the database is made up and any likeness to any actual individuals or people are entirely coincidental. All passwords are also not actual passwords and were generated using random string generators.
 
@@ -38,7 +41,9 @@ There are however some improvements I would make to this project. Of course ther
 - The use of HTML + CSS + Javascript is not as popular anymore, potentially looking into more modern stuff like React would be better for the long term. But at the end of the day, I used HTML + CSS + Javascript, cause React and its corresponding stuff is built ontop of the old! And it's good in my opinion to at least have an understanding of how it use to be done!
 - Having inserted Javascript in the webpages themselves works...But in all respect I really should have modularised it further and put all Javascript in an acompanying js folder
 ### Security
-- I'll be a bit honest here, I know for a fact I haven't done everything 100% safe and secure work. But on reflection, I'm having a hard time coming up with issues because 'you don't know what you don't know' and my main area of study was not Cyber security. If I do learn about something new I'll be sure to write it on here so you folks can learn from my mistakes!
+- Added Content Security Policy (CSP) would be helpful as it restricts what type of Javascript, CSS, and images can be loaded. Specifically, we can set it so that only scripts from our own domain is trusted which in turn blocks malicious inline or external scripts, even after injection
+- Regenerating session IDs after login would also be helpful. This means any existing session ID, when the user logs in, will be replaced. This prevents attackers from reusing any existing user session IDs
+- Adding CSRF tokens to forms would help prevent third parties from submitting requests on behalf of logged in users as the server can verify the token upobn every form submission
 
 ## How To Run
 Due to the use of PHP, we must simulate a web server to run it correctly. For the purposes of this design I used XAMPP (it's free and open source!). Follow the steps below to get your copy of the project running!
